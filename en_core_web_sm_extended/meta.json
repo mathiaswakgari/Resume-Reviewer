@@ -128,9 +128,13 @@
     "ner":[
       "CARDINAL",
       "DATE",
+      "EMAIL",
       "EVENT",
+      "EXPERIENCE",
       "FAC",
+      "FULL_NAME",
       "GPE",
+      "INSTITUTE",
       "LANGUAGE",
       "LAW",
       "LOC",
@@ -140,12 +144,11 @@
       "ORG",
       "PERCENT",
       "PERSON",
+      "PHONE",
       "PRODUCT",
-      "PROGRAMMING_LANGUAGE",
       "QUANTITY",
-      "TECHNOLOGY",
+      "TECH_STACK",
       "TIME",
-      "TOOL",
       "WORK_OF_ART"
     ]
   },

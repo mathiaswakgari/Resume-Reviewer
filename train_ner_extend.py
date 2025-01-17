@@ -1,6 +1,6 @@
 import spacy
 from spacy.training.example import Example
-from train_data import TRAIN_DATA  # Import your custom training data
+from resume_training_data import TRAIN_DATA  # Import your custom training data
 
 # Load the pre-trained SpaCy model
 nlp = spacy.load("en_core_web_sm")
@@ -9,7 +9,7 @@ nlp = spacy.load("en_core_web_sm")
 ner = nlp.get_pipe("ner")
 
 # Add custom labels to the NER component
-labels = ["TOOL", "TECHNOLOGY", "LANGUAGE", "PROGRAMMING_LANGUAGE"]
+labels = ["TECH_STACK", "EXPERIENCE", "INSTITUTE", "LANGUAGE", "FULL_NAME", "EMAIL", "PHONE"]
 for label in labels:
     if label not in ner.labels:
         ner.add_label(label)

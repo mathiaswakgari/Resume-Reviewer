@@ -38,18 +38,34 @@ def extract_text_from_docx(filename):
 
 def analyse_text(text):
     doc  = nlp(text)
-    prog_languages = [ent.text for ent in doc.ents if ent.label_ == "PROGRAMMING_LANGUAGE"]
-    tools = [ent.text for ent in doc.ents if ent.label_ == "TOOL"]
-    spoken_languages = [ent.text for ent in doc.ents if ent.label_ == "LANGUAGE"]
-    technologies_used = [ent.text for ent in doc.ents if ent.label_ == "TECHNOLOGY"]
-    return {
-        "word_count": len(text.split()),
-        "entities": [(ent.text, ent.label_) for ent in doc.ents],
-        "programming_languages": prog_languages,
-        "tools_used": tools,
-        "spoken_languages": spoken_languages,
-        "technologies_used": technologies_used
+
+    resume_details = {
+        "full_name": [],
+        "tech_stacks": [],
+        "experience": [],
+        "institute": [],
+        "languages_spoken": [],
+        "email": [],
+        "phone_number": []
     }
+
+    for ent in doc.ents:
+        if ent.label_ == "FULL_NAME":
+            resume_details["full_name"].append(ent.text)
+        elif ent.label_ == "TECH_STACK":
+            resume_details["tech_stacks"].append(ent.text)
+        elif ent.label_ == "EXPERIENCE":
+            resume_details["experience"].append(ent.text)
+        elif ent.label_ == "INSTITUTE":
+            resume_details["institute"].append(ent.text)
+        elif ent.label_ == "LANGUAGE":
+            resume_details["languages_spoken"].append(ent.text)
+        elif ent.label_ == "EMAIL":
+            resume_details["email"].append(ent.text)
+        elif ent.label_ == "PHONE":
+            resume_details["phone_number"].append(ent.text)
+
+    return resume_details
 
 @app.route('/upload')
 def index():
