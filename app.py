@@ -35,3 +35,12 @@ def extract_text_from_docx(filename):
     doc = docx.Document(filename)
     text = [paragraph.text for paragraph in doc.paragraphs]
     return "\n".join(text)
+
+def extract_skills(text):
+    doc  = nlp(text)
+    skills = [ent.text for ent in doc.ents if ent.label == "SKILL"]
+    return {
+        "word_count": len(text.split()),
+        "entities": [(ent.text, ent.label_) for ent in doc.ents],
+        "skills": skills,
+    }
