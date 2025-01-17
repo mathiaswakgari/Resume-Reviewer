@@ -14,7 +14,7 @@ ALLOWED_EXTENSIONS = {'pdf', 'docx'}
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
 # NLP model
-nlp = spacy.load("en_core_web_sm")
+nlp = spacy.load("en_core_web_sm_extended")
 
 os.makedirs(UPLOAD_FOLDER, exist_ok=True) 
 
@@ -38,7 +38,7 @@ def extract_text_from_docx(filename):
 
 def extract_skills(text):
     doc  = nlp(text)
-    skills = [ent.text for ent in doc.ents if ent.label == "SKILLS"]
+    skills = [ent.text for ent in doc.ents if ent.label == "SKILL"]
     return {
         "word_count": len(text.split()),
         "entities": [(ent.text, ent.label_) for ent in doc.ents],
