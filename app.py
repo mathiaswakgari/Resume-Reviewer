@@ -24,3 +24,14 @@ def allowed_file(filename):
 
     return extension_exists and extension_valid
 
+def extract_text_from_pdf(filename):
+    text = ""
+    reader = PdfReader(filename)
+    for page in reader.pages:
+        text += page.extract_text()
+    return text
+
+def extract_text_from_docx(filename):
+    doc = docx.Document(filename)
+    text = [paragraph.text for paragraph in doc.paragraphs]
+    return "\n".join(text)
