@@ -44,3 +44,34 @@ def extract_skills(text):
         "entities": [(ent.text, ent.label_) for ent in doc.ents],
         "skills": skills,
     }
+
+@app.route('/upload', methods=['POST'])
+def upload_file():
+    if 'file' not in request.files:
+        return jsonify({"error": "No file part"}), 400
+    
+    file = request.files['file']
+    if file.filename == '':
+        return jsonify({"error": "No selected file"}), 400
+    
+    if file and allowed_file(file.filename):
+        filename = secure_filename(file.filename)
+        file_path = os.path.join(app.config['UPLOAD_FOLDER'], filename)
+        file.save(file_path)
+        
+        
+        if filename.lower().endswith('.pdf'):
+            text = extract_text_from_pdf(file_path)
+        elif filename.lower().endswith('.docx'):
+            text = extract_text_from_docx(file_path)
+        else:
+            return jsonify({"error": "Unsupported file type"}), 400
+        
+        
+        skills = extract_skills(text)
+        return jsonify(skills)
+    else:
+        return jsonify({"error": "File type not allowed"}), 400
+
+if __name__ == '__main__':
+    app.run(debug=True)
