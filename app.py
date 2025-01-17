@@ -36,13 +36,19 @@ def extract_text_from_docx(filename):
     text = [paragraph.text for paragraph in doc.paragraphs]
     return "\n".join(text)
 
-def extract_skills(text):
+def analyse_text(text):
     doc  = nlp(text)
-    skills = [ent.text for ent in doc.ents if ent.label == "SKILL"]
+    prog_languages = [ent.text for ent in doc.ents if ent.label_ == "PROGRAMMING_LANGUAGE"]
+    tools = [ent.text for ent in doc.ents if ent.label_ == "TOOL"]
+    spoken_languages = [ent.text for ent in doc.ents if ent.label_ == "LANGUAGE"]
+    technologies_used = [ent.text for ent in doc.ents if ent.label_ == "TECHNOLOGY"]
     return {
         "word_count": len(text.split()),
         "entities": [(ent.text, ent.label_) for ent in doc.ents],
-        "skills": skills,
+        "programming_languages": prog_languages,
+        "tools_used": tools,
+        "spoken_languages": spoken_languages,
+        "technologies_used": technologies_used
     }
 
 @app.route('/upload')
@@ -72,7 +78,7 @@ def upload_file():
             return jsonify({"error": "Unsupported file type"}), 400
         
         
-        skills = extract_skills(text)
+        skills = analyse_text(text)
         return jsonify(skills)
     else:
         return jsonify({"error": "File type not allowed"}), 400

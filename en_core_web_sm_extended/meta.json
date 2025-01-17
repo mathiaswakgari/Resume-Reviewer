@@ -141,9 +141,11 @@
       "PERCENT",
       "PERSON",
       "PRODUCT",
+      "PROGRAMMING_LANGUAGE",
       "QUANTITY",
-      "SKILL",
+      "TECHNOLOGY",
       "TIME",
+      "TOOL",
       "WORK_OF_ART"
     ]
   },

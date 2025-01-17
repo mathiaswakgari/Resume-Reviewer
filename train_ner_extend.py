@@ -8,9 +8,11 @@ nlp = spacy.load("en_core_web_sm")
 # Get the Named Entity Recognizer (NER) component
 ner = nlp.get_pipe("ner")
 
-# Add the custom label to the NER component
-if "SKILL" not in ner.labels:
-    ner.add_label("SKILL")
+# Add custom labels to the NER component
+labels = ["TOOL", "TECHNOLOGY", "LANGUAGE", "PROGRAMMING_LANGUAGE"]
+for label in labels:
+    if label not in ner.labels:
+        ner.add_label(label)
 
 # Disable other components in the pipeline during training
 unaffected_pipes = [pipe for pipe in nlp.pipe_names if pipe != "ner"]
