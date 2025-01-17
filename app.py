@@ -1,5 +1,5 @@
 import os
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, render_template
 from werkzeug.utils import secure_filename
 import docx
 from PyPDF2 import PdfReader
@@ -38,12 +38,16 @@ def extract_text_from_docx(filename):
 
 def extract_skills(text):
     doc  = nlp(text)
-    skills = [ent.text for ent in doc.ents if ent.label == "SKILL"]
+    skills = [ent.text for ent in doc.ents if ent.label == "SKILLS"]
     return {
         "word_count": len(text.split()),
         "entities": [(ent.text, ent.label_) for ent in doc.ents],
         "skills": skills,
     }
+
+@app.route('/upload')
+def index():
+    return render_template('index.html')
 
 @app.route('/upload', methods=['POST'])
 def upload_file():
