@@ -67,7 +67,41 @@ def analyse_text(text):
         elif ent.label_ == "PHONE":
             resume_details["phone_number"].append(ent.text)
 
-    return resume_details
+    # Categorization Logic
+    categorized_resume = categorize_resume(resume_details)
+
+    return categorized_resume
+
+def categorize_resume(resume_details):
+    # Initialize categories
+    experience_level = "Unknown"
+    skill_level = "Unknown"
+
+    # Categorize based on experience
+    experience = resume_details["experience"]
+    if any(exp.lower() in ["5 years", "senior", "lead"] for exp in experience):
+        experience_level = "Senior"
+    elif any(exp.lower() in ["2 years", "mid-level", "junior"] for exp in experience):
+        experience_level = "Mid-level"
+    else:
+        experience_level = "Junior"
+
+    # Categorize based on tech stack (skills)
+    skills = resume_details["tech_stacks"]
+    if any(skill.lower() in ["python", "java", "c++", "javascript"] for skill in skills):
+        skill_level = "Software Developer"
+    elif any(skill.lower() in ["data science", "machine learning", "tensorflow"] for skill in skills):
+        skill_level = "Data Scientist"
+    elif any(skill.lower() in ["management", "project"] for skill in skills):
+        skill_level = "Project Manager"
+    else:
+        skill_level = "Generalist"
+
+    return {
+        "experience_level": experience_level,
+        "skill_level": skill_level,
+        "details": resume_details
+    }
 
 @app.route('/upload')
 def index():
@@ -96,8 +130,8 @@ def upload_file():
             return jsonify({"error": "Unsupported file type"}), 400
         
         
-        skills = analyse_text(text)
-        return jsonify(skills)
+        categorized_resume = analyse_text(text)
+        return jsonify(categorized_resume)
     else:
         return jsonify({"error": "File type not allowed"}), 400
 

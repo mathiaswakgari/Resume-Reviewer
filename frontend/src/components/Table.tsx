@@ -4,7 +4,9 @@ interface Props {
   response: SummaryResponse;
 }
 
-const SummaryTable = ({ response }: Props) => {
+const SummaryTable = ({
+  response: { details, skill_level, experience_level },
+}: Props) => {
   return (
     <table className="text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
       <thead>
@@ -14,68 +16,95 @@ const SummaryTable = ({ response }: Props) => {
         </tr>
       </thead>
       <tbody>
-        {response.full_name && (
+        {details.full_name && (
           <tr>
             <td className="border border-gray-300 px-4 py-2">Full Name</td>
             <td className="border border-gray-300 px-4 py-2">
-              {response.full_name[0]}
+              {details.full_name[0]}
             </td>
           </tr>
         )}
-        {response.email && (
+        {details.email && (
           <tr>
             <td className="border border-gray-300 px-4 py-2">Email</td>
             <td className="border border-gray-300 px-4 py-2">
-              {response.email[0]}
+              {details.email[0]}
             </td>
           </tr>
         )}
-        {response.phone_number && (
+        {details.phone_number && (
           <tr>
             <td className="border border-gray-300 px-4 py-2">Phone number</td>
             <td className="border border-gray-300 px-4 py-2">
-              {response.phone_number[0]}
+              {details.phone_number[0]}
             </td>
           </tr>
         )}
-        {response.tech_stacks && (
+        {details.tech_stacks && (
           <tr>
             <td className="border border-gray-300 px-4 py-2">Tool(s)</td>
             <td className="border border-gray-300 px-4 py-2">
-              {response.tech_stacks.map((name, index) => (
+              {details.tech_stacks.map((name, index) => (
                 <span key={index}>
                   {name}
-                  {index < response.tech_stacks!.length - 1 && ", "}
+                  {index < details.tech_stacks!.length - 1 && ", "}
                 </span>
               ))}
             </td>
           </tr>
         )}
-        {response.experience && (
+        {details.experience && (
           <tr>
-            <td className="border border-gray-300 px-4 py-2">Experience(s)</td>
+            <td className="border border-gray-300 px-4 py-2">Project(s)</td>
             <td className="border border-gray-300 px-4 py-2">
               Worked on{" "}
-              {response.experience.map((name, index) => (
+              {details.experience.map((name, index) => (
                 <span key={index}>
                   {name}
-                  {index < response.experience!.length - 1 && ", "}
+                  {index < details.experience!.length - 1 && ", "}
                 </span>
               ))}
             </td>
           </tr>
         )}
-        {response.languages_spoken && (
+        {details.institute && (
+          <tr>
+            <td className="border border-gray-300 px-4 py-2">School(s)</td>
+            <td className="border border-gray-300 px-4 py-2">
+              {details.institute.map((name, index) => (
+                <span key={index}>
+                  {name}
+                  {index < details.institute!.length - 1 && ", "}
+                </span>
+              ))}
+            </td>
+          </tr>
+        )}
+        {details.languages_spoken && (
           <tr>
             <td className="border border-gray-300 px-4 py-2">Languages(s)</td>
             <td className="border border-gray-300 px-4 py-2">
-              {response.languages_spoken.map((name, index) => (
+              {details.languages_spoken.map((name, index) => (
                 <span key={index}>
                   {name}
-                  {index < response.languages_spoken!.length - 1 && ", "}
+                  {index < details.languages_spoken!.length - 1 && ", "}
                 </span>
               ))}
             </td>
+          </tr>
+        )}
+        {experience_level && (
+          <tr>
+            <td className="border border-gray-300 px-4 py-2">Level</td>
+            <td className="border border-gray-300 px-4 py-2">
+              {experience_level}
+            </td>
+          </tr>
+        )}
+        {skill_level && (
+          <tr>
+            <td className="border border-gray-300 px-4 py-2">Skill</td>
+            <td className="border border-gray-300 px-4 py-2">{skill_level}</td>
           </tr>
         )}
       </tbody>
