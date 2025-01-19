@@ -1,5 +1,6 @@
 import os
 from flask import Flask, request, jsonify, render_template
+from flask_cors import CORS
 from werkzeug.utils import secure_filename
 import docx
 from PyPDF2 import PdfReader
@@ -7,6 +8,7 @@ import spacy
 
 
 app = Flask(__name__)
+CORS(app)
 
 # Upload Configuration
 UPLOAD_FOLDER = 'uploads'
