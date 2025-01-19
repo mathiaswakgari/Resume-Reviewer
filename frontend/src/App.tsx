@@ -27,10 +27,13 @@ function App() {
 
     try {
       setIsUploading(true);
-      const res = await fetch("http://localhost:5000/upload", {
-        method: "POST",
-        body: formData,
-      });
+      const res = await fetch(
+        "https://resume-reviewer-adtd.onrender.com/upload",
+        {
+          method: "POST",
+          body: formData,
+        }
+      );
 
       const data = await res.json();
       if (res.ok) {
