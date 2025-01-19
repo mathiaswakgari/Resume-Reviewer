@@ -5,7 +5,7 @@ interface Props {
 }
 
 const SummaryTable = ({
-  response: { details, skill_level, experience_level },
+  response: { details, skill_level, experience_level, score },
 }: Props) => {
   return (
     <table className="text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
@@ -105,6 +105,12 @@ const SummaryTable = ({
           <tr>
             <td className="border border-gray-300 px-4 py-2">Skill</td>
             <td className="border border-gray-300 px-4 py-2">{skill_level}</td>
+          </tr>
+        )}
+        {score && (
+          <tr>
+            <td className="border border-gray-300 px-4 py-2">Score</td>
+            <td className="border border-gray-300 px-4 py-2">{score}</td>
           </tr>
         )}
       </tbody>

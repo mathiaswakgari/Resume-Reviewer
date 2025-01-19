@@ -67,39 +67,58 @@ def analyse_text(text):
         elif ent.label_ == "PHONE":
             resume_details["phone_number"].append(ent.text)
 
-    # Categorization Logic
+    # Categorization and Scoring Logic
     categorized_resume = categorize_resume(resume_details)
 
     return categorized_resume
 
 def categorize_resume(resume_details):
-    # Initialize categories
+    # Initialize categories and score
     experience_level = "Unknown"
     skill_level = "Unknown"
+    score = 0
 
     # Categorize based on experience
     experience = resume_details["experience"]
     if any(exp.lower() in ["5 years", "senior", "lead"] for exp in experience):
         experience_level = "Senior"
+        score += 30  # Higher score for senior experience
     elif any(exp.lower() in ["2 years", "mid-level", "junior"] for exp in experience):
         experience_level = "Mid-level"
+        score += 20  # Moderate score for mid-level experience
     else:
         experience_level = "Junior"
+        score += 10  # Lower score for junior experience
 
     # Categorize based on tech stack (skills)
     skills = resume_details["tech_stacks"]
     if any(skill.lower() in ["python", "java", "c++", "javascript"] for skill in skills):
         skill_level = "Software Developer"
+        score += 25  # Points for software development skills
     elif any(skill.lower() in ["data science", "machine learning", "tensorflow"] for skill in skills):
         skill_level = "Data Scientist"
+        score += 30  # Higher score for data science skills
     elif any(skill.lower() in ["management", "project"] for skill in skills):
         skill_level = "Project Manager"
+        score += 20  # Points for management skills
     else:
         skill_level = "Generalist"
+        score += 15  # Points for general skills
+
+    # Add points for having contact information
+    if resume_details["email"]:
+        score += 10
+    if resume_details["phone_number"]:
+        score += 5
+
+    # Optionally, add more points for education
+    if resume_details["institute"]:
+        score += 10  # Add score for having education listed
 
     return {
         "experience_level": experience_level,
         "skill_level": skill_level,
+        "score": score,
         "details": resume_details
     }
 

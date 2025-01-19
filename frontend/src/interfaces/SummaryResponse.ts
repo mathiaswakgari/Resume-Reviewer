@@ -10,4 +10,5 @@ export interface SummaryResponse {
   };
   experience_level: string;
   skill_level: string;
+  score: number;
 }
