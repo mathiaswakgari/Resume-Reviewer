@@ -53,4 +53,32 @@ TRAIN_DATA = [
      {"entities": [(41, 51, "TECH_STACK"), (56, 68, "TECH_STACK")]}),
     ("Created a business trend visualization tool using Tableau.", 
      {"entities": [(50, 57, "TECH_STACK")]}),
+
+     # Resume 6
+    ("Kebede Alemu is a skilled software engineer with 5 years of experience.", {"entities": [(0, 12, "FULL_NAME"), (26,70,"EXPERIENCE")]}),
+    ("Contact: kebede.alemu@example.com | +251-933-456-789", {"entities": [(9, 33, "EMAIL"), (36, 52, "PHONE")]}),
+    ("Earned a Bachelor’s degree in Computer Engineering from Jimma University.", {"entities": [(56, 72, "INSTITUTE")]}),
+    ("Proficient in Java, Spring Boot, and Kubernetes.", {"entities": [(14, 18, "TECH_STACK"), (20, 31, "TECH_STACK"), (37, 47, "TECH_STACK")]}),
+    ("Fluent in Amharic, English, and French.", {"entities": [(10, 17, "LANGUAGE"), (19, 26, "LANGUAGE"), (32, 38, "LANGUAGE")]}),
+
+    # Resume 7
+    ("Sara Mohammed is a project manager with 8 years of experience in Agile methodologies, Scrum, and Jira.", {"entities": [(0, 13, "FULL_NAME"), (19, 61, "EXPERIENCE"), (65, 84, "TECH_STACK"), (86, 91, "TECH_STACK"), (97, 101, "TECH_STACK")]}),
+    ("Completed her MBA at Addis Ababa University and speaks Amharic, Arabic, and English.", {"entities": [(21, 43, "INSTITUTE"), (55, 62, "LANGUAGE"), (64, 70, "LANGUAGE"), (76, 83, "LANGUAGE")]}),
+    ("You can reach her at sara.mohammed@projectmail.com or call her at +251911112233.", {"entities": [(21, 50, "EMAIL"), (66, 79, "PHONE")]}),
+
+    # Resume 8
+    ("Mekonnen Tesfaye is an IT consultant with expertise in cloud computing, AWS, and Docker.", {"entities": [(0, 16, "FULL_NAME"), (23, 36, "EXPERIENCE"), (55, 70, "TECH_STACK"), (72, 75, "TECH_STACK"), (81, 87, "TECH_STACK")]}),
+    ("He studied at Addis Ababa Institute of Technology and is fluent in Amharic and English.", {"entities": [(14, 49, "INSTITUTE"), (67, 74, "LANGUAGE"), (79, 86, "LANGUAGE")]}),
+    ("His contact is mekonnen.tesfaye@consultant.com and phone number is +251912345678.", {"entities": [(15, 46, "EMAIL"), (67, 80, "PHONE")]}),
+
+    # Resume 9
+    ("Liya Fekadu is a full-stack developer with expertise in React, Node.js, and MongoDB.", {"entities": [(0, 11, "FULL_NAME"), (17, 37, "EXPERIENCE"), (56, 61, "TECH_STACK"), (63, 70, "TECH_STACK"), (76, 83, "TECH_STACK")]}),
+    ("She graduated from Jimma University and speaks Afaan Oromo and English.", {"entities": [(19, 35, "INSTITUTE"), (47, 58, "LANGUAGE"), (63, 70, "LANGUAGE")]}),
+    ("Contact her at liya.fekadu@jimma.edu or call +251933334455.", {"entities": [(15,36 , "EMAIL"), (45, 58, "PHONE")]}),
+
+    # Resume 10
+    ("Hanna Tadesse is a data scientist with 6 years of experience in machine learning and AI.", {"entities": [(0, 13, "FULL_NAME"), (19, 60, "EXPERIENCE"), (64, 80, "TECH_STACK"), (85, 87, "TECH_STACK")]}),
+    ("She earned her MSc in Data Science from Addis Ababa University and is fluent in English and Amharic.", {"entities": [(40, 62, "INSTITUTE"), (80, 87, "LANGUAGE"), (92, 99, "LANGUAGE")]}),
+    ("You can reach her at hanna.tadesse@datascience.com or call +251923456789.", {"entities": [(21, 50, "EMAIL"), (59, 72, "PHONE")]}),
+
 ]
