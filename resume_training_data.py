@@ -81,4 +81,29 @@ TRAIN_DATA = [
     ("She earned her MSc in Data Science from Addis Ababa University and is fluent in English and Amharic.", {"entities": [(40, 62, "INSTITUTE"), (80, 87, "LANGUAGE"), (92, 99, "LANGUAGE")]}),
     ("You can reach her at hanna.tadesse@datascience.com or call +251923456789.", {"entities": [(21, 50, "EMAIL"), (59, 72, "PHONE")]}),
 
+    # Resume 11
+    ("I am Abebe Birhanu, a senior software developer with 10 years of experience in backend development and microservices.", {"entities": [(5, 18, "FULL_NAME"), (22, 75, "EXPERIENCE"), (79, 98, "TECH_STACK"), (103, 116, "TECH_STACK")]}),
+    ("I hold a Bachelor’s degree in Computer Science from Addis Ababa University and am fluent in Amharic and English.", {"entities": [(52, 74, "INSTITUTE"), (92, 99, "LANGUAGE"), (104, 111, "LANGUAGE")]}),
+    ("You can contact me at abebe.birhanu@devmail.com or reach me by phone at +251922233344.", {"entities": [(22, 47, "EMAIL"), (72, 85, "PHONE")]}),
+
+    # Resume 12
+    ("I am Fikirte Alemu, a data analyst with 4 years of experience specializing in data visualization and SQL.", {"entities": [(5, 18, "FULL_NAME"), (22, 61, "EXPERIENCE"), (78, 96, "TECH_STACK"), (101, 104, "TECH_STACK")]}),
+    ("I graduated with a degree in Statistics from Bahir Dar University and am proficient in Amharic and English.", {"entities": [(45, 65, "INSTITUTE"), (87, 94, "LANGUAGE"), (99, 106, "LANGUAGE")]}),
+    ("You can reach me at fikirte.alemu@data.com or call me at +251920998877.", {"entities": [(20, 42, "EMAIL"), (57, 70, "PHONE")]}),
+
+    # Resume 13
+    ("I am Tesfaye Zewde, an experienced web developer with 7 years of experience in developing web applications using JavaScript, React, and Node.js.", {"entities": [(5, 18, "FULL_NAME"), (23, 75, "EXPERIENCE"), (113, 123, "TECH_STACK"), (125, 130, "TECH_STACK"), (136, 143, "TECH_STACK")]}),
+    ("I graduated with a Bachelor’s degree in Information Technology from Mekelle University and speak Amharic, Tigrinya, and Arabic.", {"entities": [(68, 86, "INSTITUTE"), (97, 104, "LANGUAGE"), (106, 114, "LANGUAGE"), (120, 126, "LANGUAGE")]}),
+    ("You can contact me at tesfaye.zewde@techmail.com or reach me by phone at +251912344567.", {"entities": [(22,48 , "EMAIL"), (73, 86, "PHONE")]}),
+
+    # Resume 14
+    ("I am Mulugeta Hailu, a skilled machine learning engineer with 6 years of experience specializing in deep learning and natural language processing using TensorFlow, Keras, and Python.", {"entities": [(5, 19, "FULL_NAME"), (23, 145, "EXPERIENCE"), (152, 162, "TECH_STACK"), (164, 169, "TECH_STACK"), (175, 181, "TECH_STACK")]}),
+    ("I hold a Master’s degree in Artificial Intelligence from Addis Ababa Institute of Technology and am fluent in English and Amharic.", {"entities": [(57, 92, "INSTITUTE"), (110, 117, "LANGUAGE"), (122, 129, "LANGUAGE")]}),
+    ("You can email me at mulugeta.hailu@ai.com or call me at +251911223344.", {"entities": [(20, 41, "EMAIL"), (56, 69, "PHONE")]}),
+
+    # Resume 15
+    ("I am Samuel Gebremedhin, a passionate junior software developer with 2 years of experience in web development and programming using HTML, CSS, JavaScript, and Python.", {"entities": [(5, 23, "FULL_NAME"), (38, 90, "EXPERIENCE"), (132, 136, "TECH_STACK"), (138, 141, "TECH_STACK"), (143, 153, "TECH_STACK"), (159, 165, "TECH_STACK")]}),
+    ("I graduated with a Bachelor’s degree in Computer Science from Addis Ababa University and am fluent in English and Amharic.", {"entities": [(62, 84, "INSTITUTE"), (102, 109, "LANGUAGE"), (114, 121, "LANGUAGE")]}),
+    ("You can contact me at samuel.gebremedhin@devmail.com or call me at +251912334455.", {"entities": [(22, 52, "EMAIL"), (67, 80, "PHONE")]}),
+
 ]
