@@ -106,4 +106,44 @@ TRAIN_DATA = [
     ("I graduated with a Bachelor’s degree in Computer Science from Addis Ababa University and am fluent in English and Amharic.", {"entities": [(62, 84, "INSTITUTE"), (102, 109, "LANGUAGE"), (114, 121, "LANGUAGE")]}),
     ("You can contact me at samuel.gebremedhin@devmail.com or call me at +251912334455.", {"entities": [(22, 52, "EMAIL"), (67, 80, "PHONE")]}),
 
+    # Resume 16
+    ("My name is Lemlem Assefa, a motivated entry-level data analyst with a strong background in Excel, SQL, and Power BI.", 
+     {"entities": [(11, 24, "FULL_NAME"), (38, 62, "EXPERIENCE"), (91, 96, "TECH_STACK"), (98, 101, "TECH_STACK"), (107, 115, "TECH_STACK")]}),
+    ("I earned a Bachelor’s degree in Statistics from Mekelle University and am proficient in Tigrinya and English.", 
+     {"entities": [(48, 66, "INSTITUTE"), (88, 96, "LANGUAGE"), (101, 108, "LANGUAGE")]}),
+    ("Feel free to reach out at lemlem.assefa@datamail.com or call me at +251922334455.", 
+     {"entities": [(26, 52, "EMAIL"), (67, 80, "PHONE")]}),
+
+    # Resume 17
+    ("I am Bekele Tadesse, a junior cybersecurity professional with 1 year of experience in network security and threat analysis.", 
+     {"entities": [(5, 19, "FULL_NAME"), (23, 82, "EXPERIENCE"), (86, 102, "TECH_STACK"), (107, 122, "TECH_STACK")]}),
+    ("I graduated with a Bachelor’s degree in Computer Science from Bahir Dar University and am fluent in Amharic and English.", 
+     {"entities": [(62, 82, "INSTITUTE"), (100, 107, "LANGUAGE"), (112, 119, "LANGUAGE")]}),
+    ("You can contact me via email at bekele.tadesse@securemail.com or by phone at +251933445566.", 
+     {"entities": [(32, 61, "EMAIL"), (77, 90, "PHONE")]}),
+
+    # Resume 18
+    ("My name is Fikirte Alemayehu, and I am a passionate junior mobile app developer with 3 years of experience in React Native, Flutter, and Kotlin.", 
+     {"entities": [(11, 28, "FULL_NAME"), (52, 106, "EXPERIENCE"), (110, 122, "TECH_STACK"), (124, 131, "TECH_STACK"), (137, 143, "TECH_STACK")]}),
+    ("I hold a Bachelor’s degree in Software Engineering from Adama Science and Technology University and am proficient in Afaan Oromo and English.", 
+     {"entities": [(56, 95, "INSTITUTE"), (117, 128, "LANGUAGE"), (133, 140, "LANGUAGE")]}),
+    ("Feel free to email me at fikirte.alemayehu@mobiledev.com or reach me on my phone at +251944556677.", 
+     {"entities": [(25, 56, "EMAIL"), (84, 97, "PHONE")]}), 
+
+     # Resume 19
+     ("I am Dawit Tesfaye, a skilled backend developer with 4 years of experience in Node.js, MongoDB, and Express.js.", 
+     {"entities": [(5, 18, "FULL_NAME"), (30, 74, "EXPERIENCE"), (78, 85, "TECH_STACK"), (87, 94, "TECH_STACK"), (100, 110, "TECH_STACK")]}),
+    ("I graduated with a Bachelor’s degree in Information Technology from Haramaya University and am fluent in Oromiffa and Amharic.", 
+     {"entities": [(68, 87, "INSTITUTE"), (105, 113, "LANGUAGE"), (118, 125, "LANGUAGE")]}),
+    ("Contact me via email at dawit.tesfaye@backendpro.com or by phone at +251955667788.", 
+     {"entities": [(24, 52, "EMAIL"), (68, 81, "PHONE")]}),
+
+     # Resume 20
+     ("My name is Selam Yohannes, and I am an experienced project manager with 7 years of expertise in Agile, Scrum, and Kanban methodologies.", 
+     {"entities": [(11, 25, "FULL_NAME"), (51, 92, "EXPERIENCE"), (96, 101, "TECH_STACK"), (103, 108, "TECH_STACK"), (114, 120, "TECH_STACK")]}),
+    ("I earned a Master’s degree in Project Management from St. Mary’s University and speak fluent Tigrinya and English.", 
+     {"entities": [(54, 75, "INSTITUTE"), (93, 101, "LANGUAGE"), (106, 103, "LANGUAGE")]}),
+    ("You can email me at selam.yohannes@pmail.com or reach me on my phone at +251966778899.", 
+     {"entities": [(20, 44, "EMAIL"), (72, 85, "PHONE")]}),
+
 ]
